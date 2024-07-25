@@ -1,0 +1,182 @@
+/* 
+1: Typography system
+h1=32px, h2=29px, h3=26px, h4=23px, h5=25px, h6=18px, p=16px, small=14px
+
+2: Line Height
+Default - 1
+
+3: Font Weight
+
+4: Colors
+Main:#e67e22
+Tints:#fae5d3
+Shades:
+Accents:
+Greys:#555, #333
+
+5: Shadows
+
+6: Border radius
+
+7: White Space
+2/ 4/ 8/ 12/ 16/ 24/ 32/ 48/ 64 /80 /96 /128
+
+ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /*This is equivalent to 10px and it's essential for the fontsize to the browser font size*/
+    /*Also below methodology is good to allow usage of rem in sizing hence in this case 1 rem == 10px*/
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden;
+}
+
+/* ************************************** */
+/* General Components */
+/* ************************************** */
+/* reusable component for layout */
+.grid {
+    display: grid;
+    column-gap: 4.8rem;
+    row-gap: 8rem;
+}
+
+/* a variation of the grid class */
+.grid--2--columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3--columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* reusable component for centering the content */
+.container {
+    /* 1200px or 1140px are industrial standards */
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 3.2rem 0 3.2rem;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #333;
+    letter-spacing: -0.5px; /*We do not need to scale this hence we acan use pixels*/
+    margin-bottom: 2.4rem;
+}
+
+.heading-secondary {
+    font-size: 2.9rem;
+    line-height: 1.2;
+    margin-bottom: 4.8rem;
+}
+
+.heading-tertiary {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 2.4rem;
+}
+
+.subheading {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #733f11;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.9rem;
+    font-weight: 600;
+    /* transition: all 1s; */
+    transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+    background-color: #e67e22;
+}
+
+.btn--full:hover,
+.btn--full:active {
+    background-color: #b8651b;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+    background-color: #ffff;
+    color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+    background-color: #fae5d3;
+    /* add border inside of the button because outside will move the whole data*/
+    /* 0-offset top & bottom, 0-blur, 3px-expansion, color */
+    box-shadow: inset 0 0 0 0.3rem #fff;
+}
+
+.link:link,
+.link:visited {
+    color: #b8651b;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+    padding: 2px;
+    transition: all 0.3s ease;
+}
+
+.link:hover,
+.link:active {
+    color: #733f11;
+    border-bottom: 2px solid transparent;
+}
+
+.margin-right-sm {
+    margin: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 2.4rem !important;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.center-text {
+    text-align: center;
+}
